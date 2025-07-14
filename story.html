@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story - Exclusive Textile Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark: #1a1a1a;
+            --light: #ffffff;
+            --gray: #f5f5f5;
+            --text-dark: #333333;
+            --text-light: #777777;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--light);
+            line-height: 1.6;
+            padding-top: 120px;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Reuse your navbar and footer styles from about page */
+        /* Include all the same navbar and footer CSS from the about page */
+        
+        /* Story Hero Section */
+        .story-hero {
+            height: 70vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./founder-bg.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light);
+            position: relative;
+        }
+        
+        .story-hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .story-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .story-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Founder Section */
+        .founder-section {
+            padding: 6rem 0;
+            background-color: var(--light);
+        }
+        
+        .founder-container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .founder-image {
+            flex: 1;
+            min-width: 400px;
+            height: 500px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .founder-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .founder-image:hover img {
+            transform: scale(1.03);
+        }
+        
+        .founder-content {
+            flex: 1;
+        }
+        
+        .founder-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .founder-content h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--gold);
+        }
+        
+        .founder-title {
+            color: var(--gold);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .founder-quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin: 2rem 0;
+            padding-left: 2rem;
+            border-left: 3px solid var(--gold);
+        }
+        
+        /* Milestones Section */
+        .milestones-section {
+            padding: 6rem 0;
+            background-color: var(--gray);
+        }
+        
+        .milestones-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .milestone-item {
+            display: flex;
+            margin-bottom: 3rem;
+            background-color: var(--light);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .milestone-image {
+            flex: 1;
+            min-width: 300px;
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .milestone-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .milestone-item:hover .milestone-image img {
+            transform: scale(1.1);
+        }
+        
+        .milestone-content {
+            flex: 1;
+            padding: 2.5rem;
+        }
+        
+        .milestone-year {
+            display: inline-block;
+            background-color: var(--gold);
+            color: var(--light);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        /* Global Presence Section */
+        .global-section {
+            padding: 6rem 0;
+            background-color: var(--light);
+            text-align: center;
+        }
+        
+        .global-map {
+            max-width: 800px;
+            margin: 3rem auto;
+            position: relative;
+        }
+        
+        .global-map img {
+            width: 100%;
+            height: auto;
+            opacity: 0.8;
+        }
+        
+        .location-marker {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: var(--gold);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            font-size: 12px;
+            font-weight: bold;
+            box-shadow: 0 0 0 5px rgba(212, 175, 55, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+        
+        .location-marker::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: var(--gold);
+            border-radius: 50%;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 6rem 0;
+            background-color: var(--gray);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .testimonial-text::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--gold);
+            opacity: 0.2;
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            font-family: serif;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .author-info p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .founder-container {
+                flex-direction: column;
+            }
+            
+            .founder-image {
+                min-width: 100%;
+            }
+            
+            .milestone-item {
+                flex-direction: column;
+            }
+            
+            .milestone-image {
+                min-width: 100%;
+                height: 250px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .story-hero {
+                height: 60vh;
+                min-height: 500px;
+            }
+            
+            .story-hero h1 {
+                font-size: 3rem;
+            }
+            
+            .founder-content h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .story-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .story-hero p {
+                font-size: 1rem;
+            }
+            
+            .founder-quote {
+                padding-left: 1rem;
+            }
+        }
+    </style>
+     <style>
+        :root {
+            --gold: #D4AF37;
+            --dark: #1a1a1a;
+            --light: #ffffff;
+            --gray: #f5f5f5;
+            --text-dark: #333333;
+            --text-light: #777777;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--light);
+            line-height: 1.6;
+            padding-top: 120px; /* For fixed navbar */
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Reuse your navbar styles from landing page */
+        /* Modern Luxury Navbar Styles */
+        .luxe-navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* Top Announcement Bar */
+        .top-bar {
+            background-color: var(--dark);
+            color: var(--light);
+            text-align: center;
+            padding: 8px 0;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+        
+        .top-bar p {
+            margin: 0;
+        }
+        
+        /* Main Navigation */
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: var(--light);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        /* Logo Styles */
+        .nav-logo a {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .luxe-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark);
+            letter-spacing: 1px;
+        }
+        
+        .sub-logo {
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-top: -3px;
+        }
+        
+        /* Navigation Links */
+        .nav-links ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 5px;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--gold);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--light);
+            min-width: 200px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 13px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown-menu a:hover {
+            background-color: var(--gray);
+            color: var(--gold);
+            padding-left: 25px;
+        }
+        
+        /* Navigation Icons */
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .nav-icons a {
+            color: var(--text-dark);
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-icons a:hover {
+            color: var(--gold);
+        }
+        
+        .cart-btn {
+            position: relative;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--gold);
+            color: var(--dark);
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: bold;
+        }
+        
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+        
+        .hamburger .bar {
+            width: 25px;
+            height: 2px;
+            background-color: var(--dark);
+            transition: all 0.3s ease;
+        }
+        
+        /* Mobile Menu (Hidden by default) */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--light);
+            z-index: 2000;
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+            overflow-y: auto;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .mobile-menu-container {
+            padding: 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .mobile-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .mobile-links {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px 0;
+        }
+        
+        .mobile-link {
+            display: block;
+            padding: 15px 0;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .mobile-dropdown-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .mobile-dropdown-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        
+        .mobile-dropdown-menu.active {
+            max-height: 500px;
+        }
+        
+        .mobile-dropdown-menu a {
+            display: block;
+            padding: 12px 15px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .mobile-dropdown-menu a:hover {
+            color: var(--gold);
+        }
+        
+        .dropdown-toggle {
+            transition: transform 0.3s ease;
+        }
+        
+        .dropdown-toggle.active {
+            transform: rotate(180deg);
+        }
+        
+        .mobile-actions {
+            margin-top: auto;
+            margin-bottom: 30px;
+        }
+        
+        .mobile-action-btn {
+            display: block;
+            padding: 15px;
+            margin-bottom: 10px;
+            background-color: var(--gray);
+            color: var(--text-dark);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .mobile-action-btn i {
+            margin-right: 10px;
+            color: var(--gold);
+        }
+        
+        .mobile-social {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px 0;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .mobile-social a {
+            color: var(--text-dark);
+            font-size: 18px;
+        }
+        
+        /* Search Overlay */
+        .search-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(255,255,255,0.98);
+            z-index: 3000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .search-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .search-container {
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+        }
+        
+        .close-search {
+            position: absolute;
+            top: -60px;
+            right: 0;
+            font-size: 24px;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+        
+        .search-form {
+            position: relative;
+        }
+        
+        .search-form input {
+            width: 100%;
+            padding: 20px 60px 20px 20px;
+            border: none;
+            border-bottom: 2px solid var(--gold);
+            font-size: 18px;
+            outline: none;
+        }
+        
+        .search-form button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 50px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--gold);
+            font-size: 20px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-nav {
+                padding: 15px 20px;
+            }
+            
+            .luxe-logo {
+                font-size: 20px;
+            }
+            
+            .sub-logo {
+                font-size: 9px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .top-bar {
+                font-size: 10px;
+                padding: 6px 0;
+            }
+            
+            .nav-icons {
+                gap: 15px;
+            }
+        }
+
+        /* About Page Hero */
+        .about-hero {
+            height: 60vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./aee\ \(6\).jpeg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light);
+            position: relative;
+        }
+        
+        .about-hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .about-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .about-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .breadcrumb a {
+            color: var(--gold);
+            transition: color 0.3s;
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--light);
+        }
+        
+        .breadcrumb span {
+            margin: 0 10px;
+            color: var(--text-light);
+        }
+        
+        /* Our Story Section */
+        .our-story {
+            padding: 6rem 0;
+            background-color: var(--light);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--gold);
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .story-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .story-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: var(--gold);
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            justify-content: flex-start;
+            padding-right: 50%;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) {
+            justify-content: flex-end;
+            padding-left: 50%;
+            text-align: left;
+        }
+        
+        .timeline-content {
+            max-width: 400px;
+            padding: 2rem;
+            background-color: var(--light);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -10px;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid var(--light);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -10px;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid var(--light);
+        }
+        
+        .timeline-year {
+            position: absolute;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: var(--gold);
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-year {
+            right: -50px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-year {
+            left: -50px;
+        }
+        
+        .timeline-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+        
+        .timeline-content p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        
+        /* Our Values Section */
+        .our-values {
+            padding: 6rem 0;
+            background-color: var(--gray);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .value-card {
+            background-color: var(--light);
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+        
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .value-card p {
+            color: var(--text-light);
+        }
+        
+        /* Team Section */
+        .our-team {
+            padding: 6rem 0;
+            background-color: var(--light);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .member-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 1.5rem;
+            border: 5px solid var(--gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .team-member:hover .member-image img {
+            transform: scale(1.1);
+        }
+        
+        .team-member h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-member p {
+            color: var(--gold);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .member-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .member-social a {
+            color: var(--text-dark);
+            transition: color 0.3s;
+        }
+        
+        .member-social a:hover {
+            color: var(--gold);
+        }
+        
+        /* CTA Section */
+        .about-cta {
+            padding: 6rem 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./BG\ \(2\).jpg') no-repeat center center/cover;
+            color: var(--light);
+            text-align: center;
+        }
+        
+        .about-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .about-cta p {
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background-color: var(--gold);
+            color: var(--dark);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--light);
+            color: var(--light);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .about-hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding: 0;
+                justify-content: flex-start;
+                text-align: left;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-year,
+            .timeline-item:nth-child(even) .timeline-year {
+                left: 0;
+                right: auto;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::after,
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: -10px;
+                right: auto;
+                border-right: 10px solid var(--light);
+                border-left: none;
+            }
+            
+            .story-timeline::before {
+                left: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .about-hero {
+                height: 50vh;
+                min-height: 400px;
+            }
+            
+            .about-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .timeline-year {
+                width: 80px;
+                height: 80px;
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .about-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about-hero p {
+                font-size: 1rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .timeline-content {
+                padding: 1.5rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+        }
+
+        /* Footer Styles (reuse from landing page) */
+        .luxury-footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 80px 0 0 0;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-col h4 {
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: var(--light);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col a {
+            color: #ccc;
+            font-size: 13px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col a:hover {
+            color: var(--gold);
+        }
+        
+        .contact-info p {
+            font-size: 13px;
+            color: #ccc;
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .copyright p {
+            font-size: 12px;
+            color: #777;
+        }
+        
+        .payment-methods {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .payment-methods i {
+            font-size: 20px;
+            color: #777;
+        }
+        
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar (same as about page) -->
+    <nav class="luxe-navbar">
+        <!-- Top Bar (for announcements) -->
+        <div class="top-bar">
+            <p>Free shipping on orders over ₦100,000 | Book a private consultation</p>
+        </div>
+        
+        <!-- Main Navbar -->
+        <div class="main-nav">
+            <!-- Left Side - Logo -->
+            <div class="nav-logo">
+                <a href="index.html">
+                    <span class="luxe-logo">Exclusive</span>
+                    <span class="sub-logo">Textile Hub</span>
+                </a>
+            </div>
+            
+            <!-- Center - Navigation Links -->
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#collections" class="nav-link">Collections <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="Ankara.html">Ankara</a>
+                            <a href="Aso-Oke.html">Aso-Oke</a>
+                            <a href="Swiss Lace.html">Swiss Lace</a>
+                            <a href="Ready-to-Wear.html">Ready-to-Wear</a>
+                            <a href="Man Lace.html">Man Lace </a>
+                            <a href="Veil.html">Veil</a>
+                            <a href="Women Voile lace.html">Women Voile lace</a>
+                            <a href="Man Lace.html">Man Lace</a>
+                            <a href="HOH Lace.html">HOH Lace</a>
+                            <a href="Hkg Lace.html">Hkg Lace</a>
+                        </div>
+                    </li>
+                    <li><a href="about.html" class="nav-link">About us</a></li>
+                    <li><a href="story.html" class="nav-link active">Our Story</a></li>
+                    <li><a href="service.html" class="nav-link"> Services</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <!-- Right Side - Icons -->
+            <div class="nav-icons">
+                <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
+                <a href="#" class="user-btn"><i class="far fa-user"></i></a>
+                <a href="#" class="cart-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="mobile-menu">
+            <div class="mobile-menu-container">
+                <div class="mobile-logo">
+                    <span>Exclusive Textile Hub</span>
+                </div>
+                
+                <ul class="mobile-links">
+                    <li><a href="index.html" class="mobile-link">Home</a></li>
+                    <li><a href="about.html" class="mobile-link">About Us</a></li>
+                    <li><a href="story.html" class="mobile-link active">Our Story</a></li>
+                    <li><a href="service.html" class="mobile-link">Tailoring Service</a></li>
+                    <li><a href="contact.html" class="mobile-link">Contact Us</a></li>
+                </ul>
+                
+                <div class="mobile-actions">
+                    <a href="Appointment.html" class="mobile-action-btn"><i class="fas fa-calendar-alt"></i> Book Appointment</a>
+                </div>
+                
+                <div class="mobile-social">
+                    <a href="https://www.instagram.com/exclusivetextilehub_/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send/?phone=2349055543337&text&type=phone_number&app_absent=0"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Search Overlay -->
+        <div class="search-overlay">
+            <div class="search-container">
+                <i class="fas fa-times close-search"></i>
+                <form class="search-form">
+                    <input type="text" placeholder="Search fabrics, collections...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+  
+
+    <!-- Founder Section -->
+    <section class="founder-section">
+        <div class="container">
+            <div class="founder-container">
+                <div class="founder-image">
+                    <img src="Founder.jpeg" alt="Khaaurat Olubukola - Founder of Exclusive Textile Hub">
+                </div>
+                <div class="founder-content">
+                    <h2>Khaaurat Olubukola</h2>
+                    <span class="founder-title">Founder & Creative Director</span>
+                    <p>With an innate passion for fashion and a heart dedicated to
+                         making people's special days even more memorable, Khaaurat Olubukola 
+                         transformed her childhood fascination with fabrics into a thriving
+                          global business.</p>
+                    
+                    <blockquote class="founder-quote">
+                        "My greatest joy comes from seeing the confidence 
+                        and happiness our fabrics bring to people during their most 
+                        important celebrations. Quality should be accessible to everyone."
+                    </blockquote>
+                    
+                    <p>Born into a family of textile merchants, Khaaurat learned the art 
+                        of fabric selection from her mother at a young age. 
+                         Exclusive Textile Hub - now serving elite clients across continents
+                          while staying true to its roots of offering premium quality at accessible prices.</p>
+                    
+                    <p>Today, with flagship stores in both Abuja and Lagos, Khaaurat continues
+                         her hands-on approach, personally curating collections and mentoring
+                          the next generation of textile experts who share her vision for excellence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+   
+
+
+    <!-- CTA Section -->
+    <section class="about-cta">
+        <div class="container">
+            <h2 style="color: #f5f5f5;">Become Part of Our Story</h2>
+            <p>Experience the Exclusive Textile Hub difference for your next special occasion or event</p>
+            <div class="cta-buttons">
+                <a href="collections.html" class="btn btn-primary">Explore Collections</a>
+                <a href="contact.html" class="btn btn-outline">Book a Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as about page) -->
+    <footer class="luxury-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="service.html">Bespoke Tailoring</a></li>
+                        <li><a href="service.html">Fabric Consultations</a></li>
+                        <li><a href="service.html">Bridal Services</a></li>
+                        <li><a href="service.html">Alterations</a></li>
+                        <li><a href="service.html">Corporate Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="about.html">Our Heritage</a></li>
+                        <li><a href="story.html">Our Story</a></li>
+                        <li><a href="about.html">Sustainability</a></li>
+                        <li><a href="about.html">Press</a></li>
+                        <li><a href="contact.html">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Client Services</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Payment Methods</a></li>
+                        <li><a href="about.html">FAQ</a></li>
+                        <li><a href="Appointment.html">Book an Appointment</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="about.html">Terms & Conditions</a></li>
+                        <li><a href="about.html">Privacy Policy</a></li>
+                        <li><a href="about.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col contact-info">
+                    <h4>Contact</h4>
+                    <p>Exclusive Textile Hub <br>
+                    Suite A1, Bricks 'N' More plaza, 6th Avenue, Gwarinpa, Federal Capital Territory, Nigeria</p>
+                    <p>+234 905 554 3337<br>
+                    info@exclusivetextilehub.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 Exclusive Textile Hub. All rights reserved.</p>
+                </div>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const body = document.body;
+        
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            body.classList.toggle('no-scroll');
+        });
+        
+        // Search Toggle
+        const searchBtn = document.querySelector('.search-btn');
+        const searchOverlay = document.querySelector('.search-overlay');
+        const closeSearch = document.querySelector('.close-search');
+        
+        searchBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            searchOverlay.classList.add('active');
+        });
+        
+        closeSearch.addEventListener('click', function() {
+            searchOverlay.classList.remove('active');
+        });
+        
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.main-nav');
+            if (window.scrollY > 30) {
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+            }
+        });
+
+        // Active link indicator
+        const currentPage = location.pathname.split('/').pop();
+        const navLinks = document.querySelectorAll('.nav-link, .mobile-link');
+        
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
