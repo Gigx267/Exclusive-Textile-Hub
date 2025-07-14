@@ -1,3 +1,6 @@
+I'll optimize the HTML page and fix all the errors. Here's the corrected version:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -427,229 +430,253 @@
             gap: 15px;
         }
     }
-</style>
 
-    <style>
-        :root {
-            --gold: #D4AF37;
-            --dark: #1a1a1a;
-            --light: #ffffff;
-            --gray: #f5f5f5;
-            --text-dark: #333333;
-            --text-light: #777777;
+    /* Main Content Styles */
+    :root {
+        --gold: #D4AF37;
+        --dark: #1a1a1a;
+        --light: #ffffff;
+        --gray: #f5f5f5;
+        --text-dark: #333333;
+        --text-light: #777777;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Montserrat', sans-serif;
+        color: var(--text-dark);
+        background-color: var(--light);
+        line-height: 1.6;
+        padding-top: 120px; /* Space for fixed navbar */
+    }
+    
+    h1, h2, h3, h4 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        color: var(--dark);
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    /* Collection Header */
+    .collection-header {
+        text-align: center;
+        margin-bottom: 50px;
+        padding: 0 20px;
+    }
+    
+    .collection-header h1 {
+        font-size: 3rem;
+        margin-bottom: 15px;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .collection-header h1::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--gold);
+    }
+    
+    .collection-header p {
+        max-width: 700px;
+        margin: 0 auto;
+        color: var(--text-light);
+        font-size: 1.1rem;
+    }
+    
+    /* Products Grid */
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+        padding: 0 20px;
+    }
+    
+    .product-card {
+        background: var(--light);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+    }
+    
+    .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    
+    .product-image {
+        height: 300px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .product-card:hover .product-image img {
+        transform: scale(1.05);
+    }
+    
+    .product-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: var(--gold);
+        color: var(--light);
+        padding: 5px 10px;
+        font-size: 12px;
+        font-weight: 600;
+        border-radius: 4px;
+        z-index: 2;
+    }
+    
+    .product-info {
+        padding: 20px;
+    }
+    
+    .product-name {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+    
+    .product-price {
+        font-size: 1.1rem;
+        color: var(--gold);
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+    
+    .product-description {
+        color: var(--text-light);
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+    
+    .whatsapp-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 12px;
+        background-color: #25D366;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+    
+    .whatsapp-btn:hover {
+        background-color: #128C7E;
+    }
+    
+    .whatsapp-btn i {
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+    
+    /* Collection Description */
+    .collection-description {
+        max-width: 800px;
+        margin: 60px auto;
+        padding: 0 20px;
+        text-align: center;
+    }
+    
+    .collection-description h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    
+    .collection-description p {
+        color: var(--text-light);
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 15px;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 1024px) {
+        .products-grid {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+    }
+    
+    @media (max-width: 768px) {
         body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-dark);
-            background-color: var(--light);
-            line-height: 1.6;
-            padding-top: 120px; /* Space for fixed navbar */
-        }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            color: var(--dark);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Collection Header */
-        .collection-header {
-            text-align: center;
-            margin-bottom: 50px;
-            padding: 0 20px;
+            padding-top: 100px;
         }
         
         .collection-header h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .collection-header h1::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: var(--gold);
-        }
-        
-        .collection-header p {
-            max-width: 700px;
-            margin: 0 auto;
-            color: var(--text-light);
-            font-size: 1.1rem;
-        }
-        
-        /* Products Grid */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-            padding: 0 20px;
-        }
-        
-        .product-card {
-            background: var(--light);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            font-size: 2.5rem;
         }
         
         .product-image {
-            height: 300px;
-            position: relative;
-            overflow: hidden;
+            height: 250px;
         }
-        
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .product-card:hover .product-image img {
-            transform: scale(1.05);
-        }
-        
-        .product-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background-color: var(--gold);
-            color: var(--light);
-            padding: 5px 10px;
-            font-size: 12px;
-            font-weight: 600;
-            border-radius: 4px;
-            z-index: 2;
-        }
-        
-        .product-info {
-            padding: 20px;
-        }
-        
-        .product-name {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-        
-        .product-price {
-            font-size: 1.1rem;
-            color: var(--gold);
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-        
-        .product-description {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-        
-        .whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 12px;
-            background-color: #25D366;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .whatsapp-btn:hover {
-            background-color: #128C7E;
-        }
-        
-        .whatsapp-btn i {
-            margin-right: 8px;
-            font-size: 1.2rem;
-        }
-        
-        /* Collection Description */
-        .collection-description {
-            max-width: 800px;
-            margin: 60px auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-        
-        .collection-description h2 {
+    }
+    
+    @media (max-width: 576px) {
+        .collection-header h1 {
             font-size: 2rem;
-            margin-bottom: 20px;
         }
         
-        .collection-description p {
-            color: var(--text-light);
+        .collection-header p {
             font-size: 1rem;
-            line-height: 1.8;
-            margin-bottom: 15px;
         }
         
-        /* Responsive Adjustments */
-        @media (max-width: 1024px) {
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
+        .products-grid {
+            grid-template-columns: 1fr;
         }
-        
-        @media (max-width: 768px) {
-            body {
-                padding-top: 100px;
-            }
-            
-            .collection-header h1 {
-                font-size: 2.5rem;
-            }
-            
-            .product-image {
-                height: 250px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .collection-header h1 {
-                font-size: 2rem;
-            }
-            
-            .collection-header p {
-                font-size: 1rem;
-            }
-            
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    }
+
+    /* WhatsApp Float Button */
+    .whatsapp-float {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25D366;
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        z-index: 100;
+        transition: all 0.3s;
+    }
+    
+    .whatsapp-float:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        color: white;
+    }
+</style>
 </head>
 <body>
     <!-- Navbar -->
@@ -678,13 +705,13 @@
                         <div class="dropdown-menu">
                             <a href="Ankara.html">Ankara</a>
                             <a href="Aso-Oke.html">Aso-Oke</a>
-                            <a href="Swiss Lace.html">Swiss Lace</a>
+                            <a href="Swiss-Lace.html">Swiss Lace</a>
                             <a href="Ready-to-Wear.html">Ready-to-Wear</a>
-                            <a href="Man Lace.html">Man Lace</a>
+                            <a href="Man-Lace.html">Man Lace</a>
                             <a href="Veil.html">Veil</a>
-                            <a href="Women Voile lace.html">Women Voile lace</a>
-                            <a href="HOH Lace.html">HOH Lace</a>
-                            <a href="Hkg Lace.html">Hkg Lace</a>
+                            <a href="Women-Voile-lace.html">Women Voile lace</a>
+                            <a href="HOH-Lace.html">HOH Lace</a>
+                            <a href="Hkg-Lace.html">Hkg Lace</a>
                         </div>
                     </li>
                     <li><a href="about.html" class="nav-link">About us</a></li>
@@ -725,13 +752,13 @@
                         <div class="mobile-dropdown-menu">
                             <a href="Ankara.html">Ankara</a>
                             <a href="Aso-Oke.html">Aso-Oke</a>
-                            <a href="Swiss Lace.html">Swiss Lace</a>
+                            <a href="Swiss-Lace.html">Swiss Lace</a>
                             <a href="Ready-to-Wear.html">Ready-to-Wear</a>
-                            <a href="Man Lace.html">Man Lace</a>
+                            <a href="Man-Lace.html">Man Lace</a>
                             <a href="Veil.html">Veil</a>
-                            <a href="Women Voile lace.html">Women Voile lace</a>
-                            <a href="HOH Lace.html">HOH Lace</a>
-                            <a href="Hkg Lace.html">Hkg Lace</a>
+                            <a href="Women-Voile-lace.html">Women Voile lace</a>
+                            <a href="HOH-Lace.html">HOH Lace</a>
+                            <a href="Hkg-Lace.html">Hkg Lace</a>
                         </div>
                     </li>
                     
@@ -782,13 +809,12 @@
                 <!-- Product 1 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="all (1).jpeg" alt="Applique Lace ">
+                        <img src="all (1).jpeg" alt="Applique Lace">
                         <span class="product-badge">Bestseller</span>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Applique Lace </h3>
+                        <h3 class="product-name">Applique Lace</h3>
                         <div class="product-price">₦155,000 per yard</div>
-                      
                         <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Classic%20Swiss%20Lace" class="whatsapp-btn">
                             <i class="fab fa-whatsapp"></i> Order on WhatsApp
                         </a>
@@ -798,11 +824,11 @@
                 <!-- Product 2 -->
                 <div class="product-card">
                     <div class="product-image">
-                       <img src="all (2).jpeg" alt="Applique Lace ">
+                       <img src="all (2).jpeg" alt="Applique Lace">
                         <span class="product-badge">Bestseller</span>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Applique Lace </h3>
+                        <h3 class="product-name">Applique Lace</h3>
                         <div class="product-price">₦155,000 per yard</div>
                         <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Royal%20Swiss%20Lace" class="whatsapp-btn">
                             <i class="fab fa-whatsapp"></i> Order on WhatsApp
@@ -813,11 +839,11 @@
                 <!-- Product 3 -->
                 <div class="product-card">
                     <div class="product-image">
-                         <img src="all (3).jpeg" alt="Applique Lace ">
+                         <img src="all (3).jpeg" alt="Applique Lace">
                         <span class="product-badge">Bestseller</span>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Applique Lace </h3>
+                        <h3 class="product-name">Applique Lace</h3>
                         <div class="product-price">₦155,000 per yard</div>
                         <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Sheer%20Swiss%20Lace" class="whatsapp-btn">
                             <i class="fab fa-whatsapp"></i> Order on WhatsApp
@@ -828,11 +854,11 @@
                 <!-- Product 4 -->
                 <div class="product-card">
                     <div class="product-image">
-                         <img src="all (4).jpeg" alt="Applique Lace ">
+                         <img src="all (4).jpeg" alt="Applique Lace">
                         <span class="product-badge">Bestseller</span>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Applique Lace </h3>
+                        <h3 class="product-name">Applique Lace</h3>
                         <div class="product-price">₦155,000 per yard</div>
                         <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Embroidered%20Swiss%20Lace" class="whatsapp-btn">
                             <i class="fab fa-whatsapp"></i> Order on WhatsApp
@@ -843,11 +869,11 @@
                 <!-- Product 5 -->
                 <div class="product-card">
                     <div class="product-image">
-                         <img src="all (5).jpeg" alt="Applique Lace ">
+                         <img src="all (5).jpeg" alt="Applique Lace">
                         <span class="product-badge">Bestseller</span>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Applique Lace </h3>
+                        <h3 class="product-name">Applique Lace</h3>
                         <div class="product-price">₦155,000 per yard</div>
                         <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Gold%20Swiss%20Lace" class="whatsapp-btn">
                             <i class="fab fa-whatsapp"></i> Order on WhatsApp
@@ -858,11 +884,11 @@
                 <!-- Product 6 -->
                 <div class="product-card">
                     <div class="product-image">
-                         <img src="all (6).jpeg" alt="Applique Lace ">
+                         <img src="all (6).jpeg" alt="Applique Lace">
                         <span class="product-badge">Bestseller</span>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Applique Lace </h3>
+                        <h3 class="product-name">Applique Lace</h3>
                         <div class="product-price">₦155,000 per yard</div>
                         <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Ivory%20Swiss%20Lace" class="whatsapp-btn">
                             <i class="fab fa-whatsapp"></i> Order on WhatsApp
@@ -873,162 +899,160 @@
                 <!-- Product 7 -->
                 <div class="product-card">
                     <div class="product-image">
-                         <img src="all (7).jpeg" alt="Applique Lace ">
+                         <img src="all (7).jpeg" alt="Applique Lace">
                         <span class="product-badge">Bestseller</span>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Applique Lace </h3>
+                        <h3 class="product-name">Applique Lace</h3>
                         <div class="product-price">₦155,000 per yard</div>
                         <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Chantilly%20Swiss%20Lace" class="whatsapp-btn">
                             <i class="fab fa-whatsapp"></i> Order on WhatsApp
                         </a>
                     </div>
                 </div>
-                 <!-- Product 7 -->
-                <div class="product-card">
-                    <div class="product-image">
-                         <img src="all (9).jpeg" alt="Applique Lace ">
-                        <span class="product-badge">Bestseller</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Applique Lace </h3>
-                        <div class="product-price">₦155,000 per yard</div>
-                        <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Chantilly%20Swiss%20Lace" class="whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i> Order on WhatsApp
-                        </a>
-                    </div>
-                </div>
-                 <!-- Product 7 -->
-                <div class="product-card">
-                    <div class="product-image">
-                         <img src="all (10).jpeg" alt="Applique Lace ">
-                        <span class="product-badge">Bestseller</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Applique Lace </h3>
-                        <div class="product-price">₦155,000 per yard</div>
-                        <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Chantilly%20Swiss%20Lace" class="whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i> Order on WhatsApp
-                        </a>
-                    </div>
-                </div>
+                
                 <!-- Product 8 -->
                 <div class="product-card">
                     <div class="product-image">
-                         <img src="all (8).jpeg" alt="Applique Lace ">
+                         <img src="all (9).jpeg" alt="Applique Lace">
                         <span class="product-badge">Bestseller</span>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Applique Lace </h3>
+                        <h3 class="product-name">Applique Lace</h3>
                         <div class="product-price">₦155,000 per yard</div>
-                        <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Crystal%20Swiss%20Lace" class="whatsapp-btn">
+                        <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Chantilly%20Swiss%20Lace" class="whatsapp-btn">
                             <i class="fab fa-whatsapp"></i> Order on WhatsApp
                         </a>
                     </div>
                 </div>
+                
+                <!-- Product 9 -->
+                <div class="product-card">
+                    <div class="product-image">
+                         <img src="all (10).jpeg" alt="Applique Lace">
+                        <span class="product-badge">Bestseller</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Applique Lace</h3>
+                        <div class="product-price">₦300,000 per yard</div>
+                        <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Chantilly%20Swiss%20Lace" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 10 -->
+                <div class="product-card">
+                    <div class="product-image">
+                         <img src="aee (1).jpeg" alt="Exclusive Lace Fabric">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Applique Lace</h3>
+                        <div class="product-price">₦300,000 per yard</div>
+                        <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Chantilly%20Swiss%20Lace" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 11 -->
+                <div class="product-card">
+                    <div class="product-image">
+                         <img src="aee (5).jpeg" alt="Exclusive Lace Fabric">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Applique Lace</h3>
+                        <div class="product-price">₦300,000 per yard</div>
+                        <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Chantilly%20Swiss%20Lace" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 12 -->
+                <div class="product-card">
+                    <div class="product-image">
+                         <img src="aee (4).jpeg" alt="Exclusive Lace Fabric">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Applique Lace</h3>
+                        <div class="product-price">₦300,000 per yard</div>
+                        <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Chantilly%20Swiss%20Lace" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                
+                <!-- End of product cards -->
             </div>
         </div>
-        
+
         <!-- Collection Description -->
         <section class="collection-description">
-            <h2>About Our Swiss Lace Collection</h2>
-            <p>Our Swiss lace fabrics are imported directly from the finest manufacturers in Switzerland, known for their exceptional quality and craftsmanship. Each piece in our collection has been carefully selected for its durability, elegance, and timeless appeal.</p>
-            <p>Swiss lace is renowned for its intricate patterns, delicate texture, and luxurious feel. Whether you're creating a wedding gown, evening dress, or traditional attire, our Swiss lace provides the perfect foundation for stunning designs that stand out.</p>
-            <p>All our lace fabrics come with a quality guarantee and are available in various colors and patterns to suit every design need. Contact us for bulk orders or custom requirements.</p>
+            <h2>About Our Swiss Lace</h2>
+            <p>
+                Our Swiss Lace collection represents luxury and timeless beauty, crafted with the finest fabrics and intricate embroidery. Each piece is designed to bring sophistication and elegance to your wardrobe, ideal for special events, traditional attire, and high-profile celebrations.
+            </p>
+            <p>
+                Whether you’re searching for classic, modern, or uniquely embellished styles, our carefully curated selection guarantees premium quality and unforgettable allure. Enjoy exclusive textures, vibrant patterns, and exceptional attention to detail with every yard.
+            </p>
         </section>
     </main>
 
-    <!-- WhatsApp Float Button -->
-    <a href="https://api.whatsapp.com/send/?phone=2349055543337" class="whatsapp-float" target="_blank">
+    <!-- WhatsApp Floating Button -->
+    <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20have%20a%20question%20about%20your%20Swiss%20Lace%20collection" class="whatsapp-float" target="_blank" aria-label="Chat with us on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <style>
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            z-index: 100;
-            transition: all 0.3s;
-        }
-        
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            color: white;
-        }
-    </style>
-
-    <!-- JavaScript for Navbar Functionality -->
+    <!-- JS for Navbar, Mobile Menu, and Search -->
     <script>
-        // Mobile Menu Toggle
+        // Hamburger & Mobile Menu
         const hamburger = document.querySelector('.hamburger');
         const mobileMenu = document.querySelector('.mobile-menu');
-        const body = document.body;
-        
-        hamburger.addEventListener('click', function() {
-            this.classList.toggle('active');
+        hamburger.addEventListener('click', () => {
             mobileMenu.classList.toggle('active');
-            body.classList.toggle('no-scroll');
         });
-        
-        // Mobile Dropdown Toggle
-        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-        
-        dropdownToggles.forEach(toggle => {
-            toggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                this.classList.toggle('active');
-                const dropdownMenu = this.parentElement.nextElementSibling;
-                dropdownMenu.classList.toggle('active');
-            });
+
+        // Mobile Dropdown
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const mobileDropdownMenu = document.querySelector('.mobile-dropdown-menu');
+        dropdownToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            mobileDropdownMenu.classList.toggle('active');
+            dropdownToggle.classList.toggle('active');
         });
-        
-        // Search Toggle
-        const searchBtn = document.querySelector('.search-btn');
+
+        // Search Overlay
+        const searchBtn = document.querySelectorAll('.search-btn, .mobile-action-btn i.fa-search');
         const searchOverlay = document.querySelector('.search-overlay');
         const closeSearch = document.querySelector('.close-search');
-        
-        searchBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            searchOverlay.classList.add('active');
+        searchBtn.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                searchOverlay.classList.add('active');
+            });
         });
-        
-        closeSearch.addEventListener('click', function() {
+        closeSearch.addEventListener('click', () => {
             searchOverlay.classList.remove('active');
         });
-        
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.main-nav');
-            if (window.scrollY > 30) {
-                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-            } else {
-                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (mobileMenu.classList.contains('active') && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                mobileMenu.classList.remove('active');
             }
         });
-        
-        // Product hover effect
-        document.querySelectorAll('.product-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px)';
-                this.style.boxShadow = '0 15px 30px rgba(0,0,0,0.1)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-                this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.05)';
-            });
+
+        // Prevent scrolling when menu/overlay is open
+        function toggleBodyScroll(disable) {
+            document.body.style.overflow = disable ? 'hidden' : '';
+        }
+        mobileMenu.addEventListener('transitionend', () => {
+            toggleBodyScroll(mobileMenu.classList.contains('active'));
+        });
+        searchOverlay.addEventListener('transitionend', () => {
+            toggleBodyScroll(searchOverlay.classList.contains('active'));
         });
     </script>
 </body>
