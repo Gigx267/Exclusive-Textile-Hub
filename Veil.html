@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veil Collection | Exclusive Textile Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <style>
+    /* Modern Luxury Navbar Styles */
+    :root {
+        --gold: #D4AF37;
+        --dark: #1a1a1a;
+        --light: #ffffff;
+        --gray: #f5f5f5;
+        --text-dark: #333333;
+        --text-light: #777777;
+    }
+    
+    .luxe-navbar {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    /* Top Announcement Bar */
+    .top-bar {
+        background-color: var(--dark);
+        color: var(--light);
+        text-align: center;
+        padding: 8px 0;
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+    
+    .top-bar p {
+        margin: 0;
+    }
+    
+    /* Main Navigation */
+    .main-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 40px;
+        background-color: var(--light);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    /* Logo Styles */
+    .nav-logo a {
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .luxe-logo {
+        font-family: 'Playfair Display', serif;
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--dark);
+        letter-spacing: 1px;
+    }
+    
+    .sub-logo {
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--text-light);
+        margin-top: -3px;
+    }
+    
+    /* Navigation Links */
+    .nav-links ul {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav-link {
+        color: var(--text-dark);
+        text-decoration: none;
+        font-size: 13px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: 500;
+        position: relative;
+        padding-bottom: 5px;
+        transition: color 0.3s ease;
+    }
+    
+    .nav-link:hover {
+        color: var(--gold);
+    }
+    
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--gold);
+        transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+        width: 100%;
+    }
+    
+    /* Dropdown Menu */
+    .dropdown {
+        position: relative;
+    }
+    
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--light);
+        min-width: 200px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        z-index: 100;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    
+    .dropdown-menu a {
+        display: block;
+        padding: 12px 20px;
+        color: var(--text-dark);
+        text-decoration: none;
+        font-size: 13px;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+    }
+    
+    .dropdown-menu a:hover {
+        background-color: var(--gray);
+        color: var(--gold);
+        padding-left: 25px;
+    }
+    
+    /* Navigation Icons */
+    .nav-icons {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .nav-icons a {
+        color: var(--text-dark);
+        font-size: 16px;
+        transition: color 0.3s ease;
+    }
+    
+    .nav-icons a:hover {
+        color: var(--gold);
+    }
+    
+    .cart-btn {
+        position: relative;
+    }
+    
+    .cart-count {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background-color: var(--gold);
+        color: var(--dark);
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        font-weight: bold;
+    }
+    
+    /* Hamburger Menu */
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+    
+    .hamburger .bar {
+        width: 25px;
+        height: 2px;
+        background-color: var(--dark);
+        transition: all 0.3s ease;
+    }
+    
+    /* Mobile Menu Styles */
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--light);
+        z-index: 2000;
+        transform: translateX(-100%);
+        transition: transform 0.4s ease;
+        overflow-y: auto;
+    }
+    
+    .mobile-menu.active {
+        transform: translateX(0);
+    }
+    
+    .mobile-menu-container {
+        padding: 30px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .mobile-logo {
+        font-family: 'Playfair Display', serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .mobile-links {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 30px 0;
+    }
+    
+    .mobile-link {
+        display: block;
+        padding: 15px 0;
+        color: var(--text-dark);
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .mobile-dropdown-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .mobile-dropdown-menu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+    }
+    
+    .mobile-dropdown-menu.active {
+        max-height: 500px;
+    }
+    
+    .mobile-dropdown-menu a {
+        display: block;
+        padding: 12px 15px;
+        color: var(--text-light);
+        text-decoration: none;
+        font-size: 14px;
+    }
+    
+    .mobile-dropdown-menu a:hover {
+        color: var(--gold);
+    }
+    
+    .dropdown-toggle {
+        transition: transform 0.3s ease;
+    }
+    
+    .dropdown-toggle.active {
+        transform: rotate(180deg);
+    }
+    
+    .mobile-actions {
+        margin-top: auto;
+        margin-bottom: 30px;
+    }
+    
+    .mobile-action-btn {
+        display: block;
+        padding: 15px;
+        margin-bottom: 10px;
+        background-color: var(--gray);
+        color: var(--text-dark);
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 14px;
+    }
+    
+    .mobile-action-btn i {
+        margin-right: 10px;
+        color: var(--gold);
+    }
+    
+    .mobile-social {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px 0;
+        border-top: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .mobile-social a {
+        color: var(--text-dark);
+        font-size: 18px;
+    }
+    
+    /* Search Overlay */
+    .search-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(255,255,255,0.98);
+        z-index: 3000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .search-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .search-container {
+        width: 80%;
+        max-width: 600px;
+        position: relative;
+    }
+    
+    .close-search {
+        position: absolute;
+        top: -60px;
+        right: 0;
+        font-size: 24px;
+        color: var(--text-dark);
+        cursor: pointer;
+    }
+    
+    .search-form {
+        position: relative;
+    }
+    
+    .search-form input {
+        width: 100%;
+        padding: 20px 60px 20px 20px;
+        border: none;
+        border-bottom: 2px solid var(--gold);
+        font-size: 18px;
+        outline: none;
+    }
+    
+    .search-form button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 50px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--gold);
+        font-size: 20px;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 1024px) {
+        .nav-links {
+            display: none;
+        }
+        
+        .hamburger {
+            display: flex;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .main-nav {
+            padding: 15px 20px;
+        }
+        
+        .luxe-logo {
+            font-size: 20px;
+        }
+        
+        .sub-logo {
+            font-size: 9px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .top-bar {
+            font-size: 10px;
+            padding: 6px 0;
+        }
+        
+        .nav-icons {
+            gap: 15px;
+        }
+    }
+</style>
+
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark: #1a1a1a;
+            --light: #ffffff;
+            --gray: #f5f5f5;
+            --text-dark: #333333;
+            --text-light: #777777;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--light);
+            line-height: 1.6;
+            padding-top: 120px; /* Space for fixed navbar */
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Collection Header */
+        .collection-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 0 20px;
+        }
+        
+        .collection-header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .collection-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+        }
+        
+        .collection-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+        
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+        
+        .product-card {
+            background: var(--light);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .product-image {
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--gold);
+            color: var(--light);
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 4px;
+            z-index: 2;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-name {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .product-price {
+            font-size: 1.1rem;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .product-description {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 12px;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        /* Collection Description */
+        .collection-description {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        
+        .collection-description h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .collection-description p {
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding-top: 100px;
+            }
+            
+            .collection-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .product-image {
+                height: 250px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .collection-header h1 {
+                font-size: 2rem;
+            }
+            
+            .collection-header p {
+                font-size: 1rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="luxe-navbar">
+        <!-- Top Bar (for announcements) -->
+        <div class="top-bar">
+            <p>Free shipping on orders over ₦100,000 | Book a private consultation</p>
+        </div>
+        
+        <!-- Main Navbar -->
+        <div class="main-nav">
+            <!-- Left Side - Logo -->
+            <div class="nav-logo">
+                <a href="index.html">
+                    <span class="luxe-logo">Exclusive</span>
+                    <span class="sub-logo">Textile Hub</span>
+                </a>
+            </div>
+            
+            <!-- Center - Navigation Links -->
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#collections" class="nav-link">Collections <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="Ankara.html">Ankara</a>
+                            <a href="Aso-Oke.html">Aso-Oke</a>
+                            <a href="Swiss Lace.html">Swiss Lace</a>
+                            <a href="Ready-to-Wear.html">Ready-to-Wear</a>
+                            <a href="Man Lace.html">Man Lace</a>
+                            <a href="Veil.html">Veil</a>
+                            <a href="Women Voile lace.html">Women Voile lace</a>
+                            <a href="HOH Lace.html">HOH Lace</a>
+                            <a href="Hkg Lace.html">Hkg Lace</a>
+                        </div>
+                    </li>
+                    <li><a href="about.html" class="nav-link">About us</a></li>
+                    <li><a href="story.html" class="nav-link">Our Story</a></li>
+                    <li><a href="service.html" class="nav-link">Services</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <!-- Right Side - Icons -->
+            <div class="nav-icons">
+                <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
+                <a href="#" class="user-btn"><i class="far fa-user"></i></a>
+                <a href="#" class="cart-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                </a>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <div class="mobile-menu-container">
+                <div class="mobile-logo">Exclusive Textile Hub</div>
+                
+                <ul class="mobile-links">
+                    <li><a href="index.html" class="mobile-link">Home</a></li>
+                    
+                    <li>
+                        <div class="mobile-dropdown-header">
+                            <a href="#collections" class="mobile-link">Collections</a>
+                            <a href="#" class="dropdown-toggle"><i class="fas fa-chevron-down"></i></a>
+                        </div>
+                        <div class="mobile-dropdown-menu">
+                            <a href="Ankara.html">Ankara</a>
+                            <a href="Aso-Oke.html">Aso-Oke</a>
+                            <a href="Swiss Lace.html">Swiss Lace</a>
+                            <a href="Ready-to-Wear.html">Ready-to-Wear</a>
+                            <a href="Man Lace.html">Man Lace</a>
+                            <a href="Veil.html">Veil</a>
+                            <a href="Women Voile lace.html">Women Voile lace</a>
+                            <a href="HOH Lace.html">HOH Lace</a>
+                            <a href="Hkg Lace.html">Hkg Lace</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="about.html" class="mobile-link">About us</a></li>
+                    <li><a href="story.html" class="mobile-link">Our Story</a></li>
+                    <li><a href="service.html" class="mobile-link">Services</a></li>
+                    <li><a href="contact.html" class="mobile-link">Contact Us</a></li>
+                </ul>
+                
+                <div class="mobile-actions">
+                    <a href="#" class="mobile-action-btn"><i class="fas fa-search"></i> Search</a>
+                    <a href="#" class="mobile-action-btn"><i class="far fa-user"></i> Account</a>
+                    <a href="#" class="mobile-action-btn"><i class="fas fa-shopping-bag"></i> Cart (0)</a>
+                </div>
+                
+                <div class="mobile-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Search Overlay -->
+        <div class="search-overlay">
+            <div class="search-container">
+                <div class="close-search"><i class="fas fa-times"></i></div>
+                <form class="search-form">
+                    <input type="text" placeholder="Search our collections...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Collection Header -->
+        <section class="collection-header">
+            <h1>Veil Collection</h1>
+            <p>Discover our exquisite selection of premium veils, perfect for bridal wear, religious ceremonies, and special occasions. Each piece is crafted with delicate fabrics and intricate details.</p>
+        </section>
+        
+        <!-- Products Grid -->
+        <div class="container">
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="veil (1).jpeg" alt="Crystal Embellished Bridal Veil">
+                        <span class="product-badge">Bestseller</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Crystal Embellished Bridal Veil</h3>
+                        <div class="product-price">₦45,000</div>
+                        <p class="product-description">Elegant chapel-length veil with delicate crystal embellishments, perfect for traditional weddings.</p>
+                        <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Crystal%20Embellished%20Bridal%20Veil" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Buy on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="veil (2).jpeg" alt="Lace Trimmed Cathedral Veil">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Lace Trimmed Cathedral Veil</h3>
+                        <div class="product-price">₦52,000</div>
+                        <p class="product-description">Dramatic cathedral-length veil with intricate lace trim, creating a stunning bridal look.</p>
+                        <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Lace%20Trimmed%20Cathedral%20Veil" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Buy on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="veil (3).jpeg" alt="Pearl Beaded Fingertip Veil">
+                        <span class="product-badge">New Arrival</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Pearl Beaded Fingertip Veil</h3>
+                        <div class="product-price">₦38,000</div>
+                        <p class="product-description">Classic fingertip-length veil with delicate pearl beading for timeless elegance.</p>
+                        <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Pearl%20Beaded%20Fingertip%20Veil" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Buy on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="veil (4).jpeg" alt="Sheer Silk Mantilla Veil">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Sheer Silk Mantilla Veil</h3>
+                        <div class="product-price">₦48,000</div>
+                        <p class="product-description">Romantic mantilla-style veil in luxurious sheer silk with scalloped edges.</p>
+                        <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Sheer%20Silk%20Mantilla%20Veil" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Buy on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="veil (5).jpeg" alt="Two-Tier Blusher Veil">
+                        <span class="product-badge">Limited Edition</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Two-Tier Blusher Veil</h3>
+                        <div class="product-price">₦42,000</div>
+                        <p class="product-description">Traditional two-tier veil with blusher option, perfect for classic wedding ceremonies.</p>
+                        <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Two-Tier%20Blusher%20Veil" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Buy on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="veil (6).jpeg" alt="Floral Appliqué Wedding Veil">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Floral Appliqué Wedding Veil</h3>
+                        <div class="product-price">₦55,000</div>
+                        <p class="product-description">Beautiful veil with delicate floral appliqués that match many bridal gown designs.</p>
+                        <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Floral%20Appliqu%C3%A9%20Wedding%20Veil" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Buy on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 7 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="veil (7).jpeg" alt="Ivory Juliet Cap with Veil">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Ivory Juliet Cap with Veil</h3>
+                        <div class="product-price">₦65,000</div>
+                        <p class="product-description">Vintage-inspired Juliet cap veil with delicate lace detailing and shoulder-length veil.</p>
+                        <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Ivory%20Juliet%20Cap%20with%20Veil" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Buy on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 8 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="veil (8).jpeg" alt="Royal Blue Ceremonial Veil">
+                        <span class="product-badge">Premium</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Royal Blue Ceremonial Veil</h3>
+                        <div class="product-price">₦38,000</div>
+                        <p class="product-description">Stunning royal blue veil with gold embroidery for traditional ceremonies.</p>
+                        <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Royal%20Blue%20Ceremonial%20Veil" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Buy on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 9 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="veil (9).jpeg" alt="Silver Embroidered Party Veil">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Silver Embroidered Party Veil</h3>
+                        <div class="product-price">₦32,000</div>
+                        <p class="product-description">Glamorous party veil with silver thread embroidery for special occasions.</p>
+                        <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Silver%20Embroidered%20Party%20Veil" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Buy on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 10 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="veil (10).jpeg" alt="Gold Trimmed Traditional Veil">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Gold Trimmed Traditional Veil</h3>
+                        <div class="product-price">₦45,000</div>
+                        <p class="product-description">Luxurious traditional veil with intricate gold trim for ceremonial wear.</p>
+                        <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Gold%20Trimmed%20Traditional%20Veil" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Buy on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 11 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="veil (11).jpeg" alt="Tulle Birdcage Veil">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tulle Birdcage Veil</h3>
+                        <div class="product-price">₦28,000</div>
+                        <p class="product-description">Chic birdcage veil for vintage-inspired or modern bridal looks.</p>
+                        <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Tulle%20Birdcage%20Veil" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Buy on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 12 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="veil (12).jpeg" alt="Ivory Lace Edge Veil">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Ivory Lace Edge Veil</h3>
+                        <div class="product-price">₦35,000</div>
+                        <p class="product-description">Simple yet elegant ivory veil with delicate lace edge detailing.</p>
+                        <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Ivory%20Lace%20Edge%20Veil" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Buy on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 13 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="veil (13).jpeg" alt="Red Ceremonial Veil">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Red Ceremonial Veil</h3>
+                        <div class="product-price">₦40,000</div>
+                        <p class="product-description">Vibrant red veil with gold embroidery for traditional ceremonies.</p>
+                        <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Red%20Ceremonial%20Veil" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Buy on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 14 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="veil (14).jpeg" alt="White Silk Chapel Veil">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">White Silk Chapel Veil</h3>
+                        <div class="product-price">₦58,000</div>
+                        <p class="product-description">Luxurious silk chapel-length veil with delicate embroidery.</p>
+                        <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20White%20Silk%20Chapel%20Veil" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Buy on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 15 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="veil (15).jpeg" alt="Bridal Veil with Crystal Comb">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Bridal Veil with Crystal Comb</h3>
+                        <div class="product-price">₦62,000</div>
+                        <p class="product-description">Elegant veil attached to a stunning crystal hair comb.</p>
+                        <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Bridal%20Veil%20with%20Crystal%20Comb" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Buy on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 16 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="veil (16).jpeg" alt="Black Lace Mantilla Veil">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Black Lace Mantilla Veil</h3>
+                        <div class="product-price">₦45,000</div>
+                        <p class="product-description">Dramatic black lace mantilla veil for special occasions.</p>
+                        <a href="https://api.whatsapp.com/send/?phone=2349055543337&text=Hi%20Exclusive%20Textile%20Hub,%20I%20would%20like%20to%20purchase%20the%20Black%20Lace%20Mantilla%20Veil" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Buy on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Collection Description -->
+        <section class="collection-description">
+            <h2>The Elegance of Veils</h2>
+            <p>Our veil collection represents the perfect blend of tradition and contemporary style. Each piece is carefully selected for its quality fabric, exquisite detailing, and timeless elegance.</p>
+            <p>From bridal veils that create unforgettable wedding moments to ceremonial veils that honor cultural traditions, our collection offers options for every special occasion. The veils are made from premium materials like silk, tulle, and lace, ensuring both beauty and comfort.</p>
+            <p>Whether you're looking for a classic cathedral veil, a chic birdcage style, or a traditional ceremonial veil, you'll find exceptional craftsmanship and attention to detail in every piece of our collection.</p>
+        </section>
+    </main>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://api.whatsapp.com/send/?phone=2349055543337" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            color: white;
+        }
+    </style>
+
+    <!-- Additional Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const body = document.body;
+        
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            body.classList.toggle('no-scroll');
+        });
+        
+        // Mobile Dropdown Toggle
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+        
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                this.classList.toggle('active');
+                const dropdownMenu = this.parentElement.nextElementSibling;
+                dropdownMenu.classList.toggle('active');
+            });
+        });
+        
+        // Search Toggle
+        const searchBtn = document.querySelector('.search-btn');
+        const searchOverlay = document.querySelector('.search-overlay');
+        const closeSearch = document.querySelector('.close-search');
+        
+        searchBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            searchOverlay.classList.add('active');
+        });
+        
+        closeSearch.addEventListener('click', function() {
+            searchOverlay.classList.remove('active');
+        });
+        
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.main-nav');
+            if (window.scrollY > 30) {
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+            }
+        });
+        
+        // Product hover effect
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 15px 30px rgba(0,0,0,0.1)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.05)';
+            });
+        });
+    </script>
+</body>
+</html>
